@@ -5,11 +5,16 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 You can download the proyect and use it running the next docker image for the enviorement,inside the main project folder:
 
 ```
-docker run -it -v ${PWD}:/usr/src/app -p 4200:4200 mflober/angapp19-image:1.0 /bin/sh
+docker run -it -v ${PWD}:/usr/src/app --user root -p 4200:4200 mflober/angapp19-image:1.0 /bin/sh
 
-npm install
 ```
 
+Inside the container: 
+
+```
+npm install
+chown -R node:node /usr/src/app
+```
 
 
 ## Development server
